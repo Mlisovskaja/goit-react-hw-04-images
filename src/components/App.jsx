@@ -35,7 +35,7 @@ const App = () => {
       }
     };
     fetchPics();
-  }, [search, page, setLoading, setItems, setError, setLoading, searchPics]);
+  }, [search, page]);
 
   const onSearchPics = useCallback(({ search }) => {
     setSearch(search);

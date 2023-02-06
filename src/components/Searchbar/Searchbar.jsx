@@ -3,8 +3,8 @@ import { useState } from 'react';
 
 import styles from './searchbar.module.css';
 
-const Searchbar = ({ initialState, onSubmit }) => {
-  const [state, setState] = useState({ ...initialState });
+const Searchbar = ({ onSubmit }) => {
+  const [state, setState] = useState('');
 
   const handleChange = ({ target }) => {
     const { name, value } = target;
@@ -16,7 +16,7 @@ const Searchbar = ({ initialState, onSubmit }) => {
   const handleSubmit = e => {
     e.preventDefault();
     onSubmit({ ...state });
-    setState({ ...initialState });
+    setState('');
   };
 
   const { search } = state;
@@ -47,5 +47,4 @@ export default Searchbar;
 
 Searchbar.propTypes = {
   onSubmit: PropTypes.func.isRequired,
-  onChange: PropTypes.func,
 };
